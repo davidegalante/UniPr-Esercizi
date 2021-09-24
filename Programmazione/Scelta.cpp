@@ -27,7 +27,7 @@ int main()
         cin >> n;
         cout<<"Inserisci l'esponente: ";
         cin >> esponente;
-        cout<<endl<<"Il risultato e': "+to_string(pow(n,esponente));
+        cout<<endl<<"Il risultato dell'operazione e': "+to_string(pow(n,esponente));
     }
     
     
