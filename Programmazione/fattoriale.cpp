@@ -28,6 +28,6 @@ int main()
     cout<<endl<<"Inserire il numero: ";
     cin >> numero;
     fattor = fattoriale(numero);
-    cout<<endl<<"Il fattoriale di " +to_string(numero)+ " e': "+to_string(fattor);
+    cout<<endl<<"Il fattoriale di " +to_string(numero)+ " e': "+to_string(fattor)<<endl;
     return 0;
 }

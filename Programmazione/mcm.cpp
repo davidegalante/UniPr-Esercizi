@@ -43,6 +43,6 @@ int main()
     float MCM;
     MCM = mA;
 
-    cout<<endl<<"Il MCM e': "<<MCM;
+    cout<<endl<<"Il MCM e': "<<MCM<<endl;
     return 0;
 }

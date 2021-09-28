@@ -21,13 +21,13 @@ int main()
         cout<<endl<<"Euro: ";
         cin >> euro;
         dollari = euro*0.85;
-        cout<<endl<<to_string(euro)+" euro equivalgono a "+to_string(dollari)+" dollari!";
+        cout<<endl<<to_string(euro)+" euro equivalgono a "+to_string(dollari)+" dollari!"<<endl;
     }else
     {
         cout<<endl<<"Dollari: ";
         cin >> dollari;
         euro = dollari*1.17;
-        cout<<endl<<to_string(dollari)+" dollari equivalgono a "+to_string(euro)+" euro!";
+        cout<<endl<<to_string(dollari)+" dollari equivalgono a "+to_string(euro)+" euro!"<<endl;
     }
 
     return 0;
