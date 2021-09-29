@@ -28,7 +28,7 @@ int main()
     circonferenza = x*(2*3.14); //Formula circonferenza dato il raggio, raggio per 2 volte pigreco 
  
     float areaC;
-    areaC = (x*x)*3.14; //Formula area cerchio, raggio alla seconda per pigrego
+    areaC = (x*x)*3.14; //Formula area cerchio, raggio alla seconda per pigrego.
  
     cout<<"Area quadrato: "<<areaQ<<endl;
     cout<<"Perimetro: "<<perimetro<<endl;
