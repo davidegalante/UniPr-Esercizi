@@ -38,6 +38,6 @@ int main()
     float risultato;
     risultato=(a+b+c)/3.0;
 
-    cout<<endl<<"Il risultato della media e': "<<risultato;
+    cout<<endl<<"Il risultato della media e': "<<risultato<<endl;
     return 0;
 }
