@@ -1,12 +1,12 @@
 /******************************************************************************
 
-Davide Galante
+Davide Galante.
 Si scriva un programma in C++ che, dato un numero reale x in input, calcoli e stampi con opportuni messaggi:
 - l'area del quadrato di lato x
 - il perimetro del quadrato di lato x
 - la circonferenza del cerchio di raggio x
 - l'area del cerchio di raggio x
-NO LIBRARIA MATH
+NO LIBRARIA MATH.
 
 ***************************************************************************/
 #include <iostream>
