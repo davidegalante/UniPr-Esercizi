@@ -22,7 +22,7 @@ int main()
     areaQ = x*x; //Formula area quadrato, lato per lato
  
     int perimetro;
-    perimetro = x*4; //Formula area perimetro, lato per 4
+    perimetro = x*4; //Formula area perimetro, lato per 4.
  
     float circonferenza;
     circonferenza = x*(2*3.14); //Formula circonferenza dato il raggio, raggio per 2 volte pigreco 
