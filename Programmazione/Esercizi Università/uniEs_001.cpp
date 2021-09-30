@@ -19,7 +19,7 @@ int main()
     cin>>x;
  
     int areaQ;
-    areaQ = x*x; //Formula area quadrato, lato per lato
+    areaQ = x*x; //Formula area quadrato, lato per lato.
  
     int perimetro;
     perimetro = x*4; //Formula area perimetro, lato per 4.
