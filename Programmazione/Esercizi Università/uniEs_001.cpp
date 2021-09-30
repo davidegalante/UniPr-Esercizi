@@ -25,7 +25,7 @@ int main()
     perimetro = x*4; //Formula area perimetro, lato per 4.
  
     float circonferenza;
-    circonferenza = x*(2*3.14); //Formula circonferenza dato il raggio, raggio per 2 volte pigreco 
+    circonferenza = x*(2*3.14); //Formula circonferenza dato il raggio, raggio per 2 volte pigreco. 
  
     float areaC;
     areaC = (x*x)*3.14; //Formula area cerchio, raggio alla seconda per pigrego.
