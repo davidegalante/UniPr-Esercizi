@@ -17,7 +17,7 @@ int main()
     int x=0;
     cout<<"Inserisci un numero reale: ";
     cin>>x;
- 
+
     int areaQ;
     areaQ = x*x; //Formula area quadrato, lato per lato.
  
