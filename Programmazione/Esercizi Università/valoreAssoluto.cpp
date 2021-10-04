@@ -15,6 +15,6 @@ int main()
     cout << "Inserire un numero: ";
     cin >> x;
     result = x>0 ? x : -x;
-    cout<<endl<<"Il valore assoluto di " <<x<<" e': "<<result<<endl;
+    cout<<"Il valore assoluto di " <<x<<" e': "<<result<<endl;
     return 0;
 }
