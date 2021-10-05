@@ -12,7 +12,7 @@ NO LIBRARIA MATH.
 #include <iostream>
 #include <cmath>
 using namespace std;
-#define pigreco 3.1415
+#define PIGRECO 3.1415
 
 int main()
 {
@@ -27,7 +27,7 @@ int main()
     perimetro = x*4; //Formula area perimetro, lato per 4.
  
     float circonferenza;
-    circonferenza = x*(2*pigreco); //Formula circonferenza dato il raggio, raggio per 2 volte pigreco. 
+    circonferenza = x*(2*PIGRECO); //Formula circonferenza dato il raggio, raggio per 2 volte pigreco. 
  
     float areaC;
     areaC = (x*x)*M_PI; //Formula area cerchio, raggio alla seconda per pigreco.
