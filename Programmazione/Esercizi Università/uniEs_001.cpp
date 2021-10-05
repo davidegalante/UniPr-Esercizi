@@ -10,7 +10,9 @@ NO LIBRARIA MATH.
 
 ***************************************************************************/
 #include <iostream>
+#include <cmath>
 using namespace std;
+#define pigreco 3.1415
 
 int main()
 {
@@ -19,16 +21,16 @@ int main()
     cin>>x;
 
     int areaQ;
-    areaQ = x*x; //Formula area quadrato, lato per lato.
+    areaQ = pow(x,2); //Formula area quadrato, lato per lato.
  
     int perimetro;
     perimetro = x*4; //Formula area perimetro, lato per 4.
  
     float circonferenza;
-    circonferenza = x*(2*3.14); //Formula circonferenza dato il raggio, raggio per 2 volte pigreco. 
+    circonferenza = x*(2*pigreco); //Formula circonferenza dato il raggio, raggio per 2 volte pigreco. 
  
     float areaC;
-    areaC = (x*x)*3.14; //Formula area cerchio, raggio alla seconda per pigreco.
+    areaC = (x*x)*M_PI; //Formula area cerchio, raggio alla seconda per pigreco.
  
     cout<<"Area quadrato: "<<areaQ<<endl;
     cout<<"Perimetro: "<<perimetro<<endl;
