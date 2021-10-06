@@ -36,6 +36,7 @@
 ehthumbs.db
 Thumbs.db
 
+### VisualStudioCode ###
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
@@ -45,3 +46,8 @@ Thumbs.db
 
 # Local History for Visual Studio Code
 .history/
+
+### VisualStudioCode Patch ###
+# Ignore all local history of files
+.history
+.ionide
