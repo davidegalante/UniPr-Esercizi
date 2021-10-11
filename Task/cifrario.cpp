@@ -20,13 +20,18 @@ int main()
     cout << "Inserire tre caratteri:" << endl;
     cin >> a >> b >> c;
 
-    a = (a >= 97 && a <= 122) ? (a+3) : 63; //Cifro primo carattere, sostituisco carattere non valido con '?' (63, ascii table)
-    b = (b >= 97 && b <= 122) ? (b+3) : 63; //Cifro secondo carattere, sostituisco carattere non valido con '?' (63, ascii table)
-    c = (c >= 97 && c <= 122) ? (c+3) : 63; //Cifro terzo carattere, sostituisco carattere non valido con '?' (63, ascii table)
+    /********************************
+     Uso un doppio operatore "if ternario" che, in primo luogo,
+     stabilisce se il carattere è valido o meno e, in caso di non validità,
+     sostituisce il carattere con un '?' (63 nella ascii table).
 
-    a = a <= 122 ? a : a-26; //Se cifratura supera la lettera "z", torno all'inizio dell'alfabeto
-    b = b <= 122 ? b : b-26; //Se cifratura supera la lettera "z", torno all'inizio dell'alfabeto
-    c = c <= 122 ? c : c-26; //Se cifratura supera la lettera "z", torno all'inizio dell'alfabeto
+     Il secondo operatore ternario messo di seguito stabilisce se il risultato della cifratura "sfora"
+     e va quindi oltre al carattere "z", risolvendo quindi il problema delle ultime lettere dell'alfabeto.
+    *********************************/
+
+    a = (a < 97 || a > 122) ? 63 : (a+3) <= 122 ? (a+3) : (a+3)-26;
+    b = (b < 97 || b > 122) ? 63 : (b+3) <= 122 ? (b+3) : (b+3)-26;
+    c = (c < 97 || c > 122) ? 63 : (c+3) <= 122 ? (c+3) : (c+3)-26;
 
     cout << "Cifrario di Cesare: "<< a << " " << b << " " << c << endl; //Stampa i caratteri cifrati
     return 0;
