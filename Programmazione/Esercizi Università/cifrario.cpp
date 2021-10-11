@@ -24,9 +24,9 @@ int main()
     b = (b >= 97 && b <= 122) ? (b+3) : 63; //Cifro secondo carattere, sostituisco carattere non valido con '?' (63, ascii table)
     c = (c >= 97 && c <= 122) ? (c+3) : 63; //Cifro terzo carattere, sostituisco carattere non valido con '?' (63, ascii table)
 
-    a = a < 122 ? a : a-26; //Se cifratura supera la lettera "z", torno all'inizio 
-    b = b < 122 ? b : b-26; //Se cifratura supera la lettera "z", torno all'inizio 
-    c = c < 122 ? c : c-26; //Se cifratura supera la lettera "z", torno all'inizio 
+    a = a <= 122 ? a : a-26; //Se cifratura supera la lettera "z", torno all'inizio 
+    b = b <= 122 ? b : b-26; //Se cifratura supera la lettera "z", torno all'inizio 
+    c = c <= 122 ? c : c-26; //Se cifratura supera la lettera "z", torno all'inizio 
 
     cout << "Cifrario di Cesare: "<< a << " " << b << " " << c << endl; //Stampa i caratteri cifrati
     return 0;
