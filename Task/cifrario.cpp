@@ -21,7 +21,7 @@ int main()
     cin >> a >> b >> c;
 
     /********************************
-     Uso un doppio operatore "if ternario" che, in primo luogo,
+     Uso un doppio operatore ternario che, in primo luogo,
      stabilisce se il carattere è valido o meno e, in caso di non validità,
      sostituisce il carattere con un '?' (63 nella ascii table).
 
