@@ -25,12 +25,13 @@ int main()
         x = (-b/a) == -0 ? 0 : -(b/a);      //Per togliere il '-0', che penso non sia giustissimo
     }
 
-    cout << endl << "L'equazione " << a << "x+" << b << "=0 e' " << tipoEquazione;
-    if (tipoEquazione == "determinata"){    //Se è determinata, c'è una soluzione e la stampo.
+    cout << endl << "L'equazione " << a << "x+" << b << "=0 e' " << tipoEquazione;  //compongo l'equazione per renderla più chiara
+    if (tipoEquazione == "determinata"){            //Se è determinata, c'è una soluzione e la stampo.
         cout << endl << "La soluzione e': " << x;
-    }else if (tipoEquazione == "indeterminata"){
-        cout << endl << "Ha infinite soluzioni";
-    }
+    }else if (tipoEquazione == "indeterminata"){    //Se è indeterminata, ha infinite soluzioni.
+        cout << endl << "ha infinite soluzioni";
+    }else if (tipoEquazione == "impossibile")       //Se è impossibile, non ha soluzioni.
+        cout << endl << "non ha soluzioni";
 
     return 0;
 }
