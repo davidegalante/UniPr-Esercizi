@@ -20,7 +20,7 @@ int main()
     while (b != 0) {    //Se b e' zero, a e' il mcd. 
         tmp = b;
         b = a % b;      //altrimenti divido a per b, assegno il resto a b e il valore di b ad a (così da poter continuare finchè non e' zero)
-        a = tmp;        // 
+        a = tmp;
     }
     mcd = a;
 
