@@ -18,6 +18,11 @@ int main()
 
     cout << "Inserisci intero: ";
     cin >> n;
+    while (n<=0){
+        cout << "Errore." << endl;
+        cout << "Inserisci intero: ";
+        cin >> n;
+    }
     cout << endl;
 
     for (int i = 0; i < n; i++){
