@@ -4,7 +4,6 @@ using namespace std;
 
 int main()
 {
-    int numeroBinario[30]; //todo dimensione massima
     int nBits = 0;
     int bit = 0;
     cout << "Bits: ";
@@ -15,6 +14,8 @@ int main()
         cout << "Bits: ";
         cin>>nBits;
     }
+
+    int numeroBinario[nBits];
 
     int j = 0;
     for (int i = nBits - 1; i >= 0; i--){
@@ -68,7 +69,18 @@ int main()
            break;
         
         case 2:
-            cout << "Opposto: ";//todo opposto e controllo overflow
+            {
+                
+                cout << "Opposto: "; //todo opposto e controllo overflow
+                for ( int i=0; i<nBits; ++i) {
+                    if (numeroBinario[i]==0){
+                        numeroBinario[i]=1;
+                    }else{
+                        numeroBinario[i]=0;
+                    }
+                }
+            }
+            
             break;
     }
 
