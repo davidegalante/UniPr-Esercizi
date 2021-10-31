@@ -1,3 +1,14 @@
+/******************************************************************************
+
+Davide Galante, UniPr Informatica
+Scrivere un programma in C++ che legge un numero binario 
+rappresentato in complemento a 2 su n bit.
+Terminato l’inserimento del numero, il programma dovrà chiedere all’utente 
+una singola operazione che si vuole effettuare sul numero inserito precedentemente. (vedi pdf)
+Dopo aver effettuato l’operazione richiesta, il programma termina.
+
+***************************************************************************/
+
 #include <iostream>
 #include <math.h>
 using namespace std;
