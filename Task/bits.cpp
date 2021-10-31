@@ -43,7 +43,7 @@ int main()
     switch(scelta){
         case 0:
         //Stampo il numero binario in complemento a 2
-            cout << endl << "Numero Binario: ";
+            cout << "Numero Binario: ";
             for (int i = 0; i < nBits; i++){
                 cout << numeroBinario[i];
             }
