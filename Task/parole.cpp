@@ -19,34 +19,46 @@ int main() {
     char a[100] = "";
     char b[100] = "";
     
+    
     //ciclo infinito che si interrompe solo quando il carattere in input sara' $
     while(true){
-        cout << "Inserire la prima parola: ";
-        cin.getline(a,100);
-        //Tolgo spazi
-        int i = 0, j = 0;
-        while (a[i])
-        {
-            if (a[i] != ' ')
-                a[j++] = a[i];
-            i++;
-        }
-        a[j] = '\0';
+        int errore = 0;
+        //Controllo se stringa contiene spazi
+        do{
+            if (errore == 1)
+                cout << "Spazi non consentiti, ";
+            errore = 0;
+            cout << "Inserire la prima parola: ";
+            cin.getline(a,100);
+            //se contiene spazi, cambio valore della variabile 'errore'
+            int i = 0, j = 0;
+            while (a[i])
+            {
+                if (a[i] == ' ')
+                    errore = 1;
+                i++;
+            }
+        }while (errore == 1);
         //Se carattere in input e' $, termino programma
         if (strcmp(a,"$")==0)
             break;
 
-        cout << "Inserire la seconda parola: ";
-        cin.getline(b,100);
-        //Tolgo spazi
-        i = 0, j = 0;
-        while (b[i])
-        {
-            if (b[i] != ' ')
-                b[j++] = b[i];
-            i++;
-        }
-        b[j] = '\0';
+        //Controllo se stringa contiene spazi
+        do{
+            if (errore == 1)
+                cout << "Spazi non consentiti, ";
+            errore = 0;
+            cout << "Inserire la seconda parola: ";
+            cin.getline(b,100);
+            //se contiene spazi, cambio valore della variabile 'errore'
+            int i = 0, j = 0;
+            while (b[i])
+            {
+                if (b[i] == ' ')
+                    errore = 1;
+                i++;
+            }
+        }while (errore == 1);
         //Se carattere in input e' $, termino programma
         if (strcmp(b,"$")==0)
             break;
