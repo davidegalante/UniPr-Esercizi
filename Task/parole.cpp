@@ -6,6 +6,7 @@ Scrivere un programma in C++ che legge ripetutamente da input due parole a e b
 e stampa a video un messaggio che indica se le due parole sono uguali, 
 se una è prefisso di un’altra, oppure se una è suffisso di un’altra.
 Se sono uguali, stampare il reverse.
+Il programma termina se inserito il carattere '$' in input.
 
 ***************************************************************************/
 
