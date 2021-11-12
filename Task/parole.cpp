@@ -14,10 +14,13 @@ Il programma termina se inserito il carattere '$' in input.
 #include <cstring>
 using namespace std;
 
+
+#define MAX_CARATTERI 101
+
 int main() {
     //Dichiaro stringhe di massimo 100 caratteri
-    char a[100] = "";
-    char b[100] = "";
+    char a[MAX_CARATTERI];
+    char b[MAX_CARATTERI];
     
     
     //ciclo infinito che si interrompe solo quando il carattere in input sara' $
@@ -29,7 +32,7 @@ int main() {
                 cout << "Spazi non consentiti, ";
             errore = 0;
             cout << "Inserire la prima parola: ";
-            cin.getline(a,100);
+            cin.getline(a,MAX_CARATTERI);
             //se contiene spazi, cambio valore della variabile 'errore'
             int i = 0, j = 0;
             while (a[i])
@@ -49,7 +52,7 @@ int main() {
                 cout << "Spazi non consentiti, ";
             errore = 0;
             cout << "Inserire la seconda parola: ";
-            cin.getline(b,100);
+            cin.getline(b,MAX_CARATTERI);
             //se contiene spazi, cambio valore della variabile 'errore'
             int i = 0, j = 0;
             while (b[i])
