@@ -14,9 +14,8 @@ Il programma termina se inserito il carattere '$' in input.
 #include <cstring>
 using namespace std;
 
-//mettendo max_caratteri a 100 o 101, quando inserisco più di 100 caratteri il programma va in loop, mentre cosi' riesco a fare i controlli necessari
-//ps. se si provano a mettere più di 200 caratteri, va in loop per lo stesso problema (però almeno rispetta il massimo dei 100 caratteri).
-#define MAX_CARATTERI 200
+//Limite massimo di caratteri consentiti
+#define MAX_CARATTERI 100
 
 int main() {
     //Dichiaro stringhe di massimo 100 caratteri
@@ -33,14 +32,14 @@ int main() {
                 cout << "spazi non consentiti, ";
             errore = 0;
             cout << "inserire la prima parola: ";
-            cin.getline(a,MAX_CARATTERI);
-            while(strlen(a) > 100){
+            getline(cin,a); //metto il limite del getline a 200 perche' se si supera questo limite, il programma va in loop 
+            while(strlen(a) > MAX_CARATTERI){
                 cout << "troppi caratteri, ";
                 if (errore == 1)
                 cout << "spazi non consentiti, ";
                 errore = 0;
                 cout << "inserire la prima parola: ";
-                cin.getline(a,MAX_CARATTERI);
+                cin.getline(a,200);
             }
             //se contiene spazi, cambio valore della variabile 'errore'
             int i = 0, j = 0;
@@ -61,14 +60,14 @@ int main() {
                 cout << "spazi non consentiti, ";
             errore = 0;
             cout << "inserire la seconda parola: ";
-            cin.getline(b,MAX_CARATTERI);
-            while(strlen(b) > 100){
+            cin.getline(b,200); //metto il limite del getline a 200 perche' se si supera questo limite, il programma va in loop 
+            while(strlen(b) > MAX_CARATTERI){
                 cout << "troppi caratteri, ";
                 if (errore == 1)
                 cout << "spazi non consentiti, ";
                 errore = 0;
                 cout << "inserire la seconda parola: ";
-                cin.getline(b,MAX_CARATTERI);
+                cin.getline(b,200);
             }
             //se contiene spazi, cambio valore della variabile 'errore'
             int i = 0, j = 0;
