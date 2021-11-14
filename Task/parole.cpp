@@ -32,7 +32,7 @@ int main() {
                 cout << "spazi non consentiti, ";
             errore = 0;
             cout << "inserire la prima parola: ";
-            getline(cin,a); //metto il limite del getline a 200 perche' se si supera questo limite, il programma va in loop 
+            cin.getline(a,200); //metto il limite del getline a 200 perche' se si supera questo limite, il programma va in loop 
             while(strlen(a) > MAX_CARATTERI){
                 cout << "troppi caratteri, ";
                 if (errore == 1)
