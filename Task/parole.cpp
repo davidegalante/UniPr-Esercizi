@@ -14,8 +14,8 @@ Il programma termina se inserito il carattere '$' in input.
 #include <cstring>
 using namespace std;
 
-
-#define MAX_CARATTERI 101
+//mettendo max_caratteri a 100 o 101, quando inserisco più di 100 caratteri il programma va in loop, mentre cosi' riesco a fare i controlli necessari
+#define MAX_CARATTERI 200 
 
 int main() {
     //Dichiaro stringhe di massimo 100 caratteri
@@ -29,10 +29,18 @@ int main() {
         //Controllo se stringa contiene spazi
         do{
             if (errore == 1)
-                cout << "Spazi non consentiti, ";
+                cout << "spazi non consentiti, ";
             errore = 0;
-            cout << "Inserire la prima parola: ";
+            cout << "inserire la prima parola: ";
             cin.getline(a,MAX_CARATTERI);
+            while(strlen(a) > 100){
+                cout << "troppi caratteri, ";
+                if (errore == 1)
+                cout << "spazi non consentiti, ";
+                errore = 0;
+                cout << "inserire la prima parola: ";
+                cin.getline(a,MAX_CARATTERI);
+            }
             //se contiene spazi, cambio valore della variabile 'errore'
             int i = 0, j = 0;
             while (a[i])
@@ -49,10 +57,18 @@ int main() {
         //Controllo se stringa contiene spazi
         do{
             if (errore == 1)
-                cout << "Spazi non consentiti, ";
+                cout << "spazi non consentiti, ";
             errore = 0;
-            cout << "Inserire la seconda parola: ";
+            cout << "inserire la seconda parola: ";
             cin.getline(b,MAX_CARATTERI);
+            while(strlen(b) > 100){
+                cout << "troppi caratteri, ";
+                if (errore == 1)
+                cout << "spazi non consentiti, ";
+                errore = 0;
+                cout << "inserire la seconda parola: ";
+                cin.getline(b,MAX_CARATTERI);
+            }
             //se contiene spazi, cambio valore della variabile 'errore'
             int i = 0, j = 0;
             while (b[i])
