@@ -15,7 +15,8 @@ Il programma termina se inserito il carattere '$' in input.
 using namespace std;
 
 //mettendo max_caratteri a 100 o 101, quando inserisco più di 100 caratteri il programma va in loop, mentre cosi' riesco a fare i controlli necessari
-#define MAX_CARATTERI 200 
+//ps. se si provano a mettere più di 200 caratteri, va in loop per lo stesso problema.
+#define MAX_CARATTERI 200
 
 int main() {
     //Dichiaro stringhe di massimo 100 caratteri
