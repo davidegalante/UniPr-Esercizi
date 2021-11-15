@@ -15,12 +15,11 @@ using namespace std;
 struct contatto{
         char nome[32];
         char cognome[32];
-        char numeroTelefono[10];
+        char numeroTelefono[11];
     };
 
 int main()
 {
-    
     contatto rubrica [100];
     int scelta = 0;
     int numContatti = 0;
