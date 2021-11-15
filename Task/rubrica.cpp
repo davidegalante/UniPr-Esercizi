@@ -3,13 +3,11 @@
 Davide Galante, UniPr Informatica
 Scrivere un programma che legge da input una sequenza di dati che rappresentano 
 il nome, il cognome e il numero di telefono di una persona. 
-I contatti devono essere memorizzati in un array di massimo 100 elementi. 
+I rubrica devono essere memorizzati in un array di massimo 100 elementi. 
 Il programma deve chiedere ripetutamente di scegliere se visualizzare la rubrica,
 inserire un contatto, eliminare un contatto o uscire dal programma.
 
 ***************************************************************************/
-
-
 #include <iostream>
 #include <cstring>
 using namespace std;
@@ -23,18 +21,12 @@ struct contatto{
 int main()
 {
     
-    contatto contatti [100];
-
+    contatto rubrica [100];
     int scelta = 0;
     int numContatti = 0;
-    //contatto c =  {"davide","galante","4929402"};//da inserire in array contatti e verificare
-    //contatti[0] = c;
     
-
     cout << "*** Rubrica ***" << endl;
-    
     while (true){
-        
         cout << "1 - Visualizza rubrica\n2 - Inserisci contatto\n3 - Cancella contatto\n4 - Esci" << endl;
         cin >> scelta;
 
@@ -44,17 +36,17 @@ int main()
                     cout << "Rubrica vuota!\n";
                 }else{
                     for (int i = 0; i < numContatti; i++)
-                        cout << contatti[i].nome << " " << contatti[i].cognome << " " << contatti[i].numeroTelefono << " " << endl;
+                        cout << rubrica[i].nome << " " << rubrica[i].cognome << " " << rubrica[i].numeroTelefono << " " << endl;
                 }
                 break;
 
             case 2:
                 cout << "Inserisci il nome del contatto da aggiungere: ";
-                cin >> contatti[numContatti].nome;
+                cin >> rubrica[numContatti].nome;
                 cout << "Inserisci il cognome del contatto da aggiungere: ";
-                cin >> contatti[numContatti].cognome;
+                cin >> rubrica[numContatti].cognome;
                 cout << "Inserisci il numero del contatto da aggiungere: ";
-                cin >> contatti[numContatti].numeroTelefono;
+                cin >> rubrica[numContatti].numeroTelefono;
                 numContatti++;
                 cout << "\nContatto Aggiunto!\n";
                 break;
@@ -70,11 +62,11 @@ int main()
                 cin >> cognomeDaRimuovere;
 
                 for (int i = 0; i < numContatti; i++){
-                    if (strcmp(nomeDaRimuovere,contatti[i].nome)==0 && strcmp(cognomeDaRimuovere,contatti[i].cognome)==0){
+                    if (strcmp(nomeDaRimuovere,rubrica[i].nome)==0 && strcmp(cognomeDaRimuovere,rubrica[i].cognome)==0){
                         //elimino contatto
                         for(int j=i; j<(numContatti-1); j++)
                         {
-                            contatti[j]=contatti[j+1];
+                            rubrica[j]=rubrica[j+1];
                         }
                         trovato = 1;
                         numContatti--;
