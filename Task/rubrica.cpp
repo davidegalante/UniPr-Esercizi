@@ -1,3 +1,15 @@
+/******************************************************************************
+
+Davide Galante, UniPr Informatica
+Scrivere un programma che legge da input una sequenza di dati che rappresentano 
+il nome, il cognome e il numero di telefono di una persona. 
+I contatti devono essere memorizzati in un array di massimo 100 elementi. 
+Il programma deve chiedere ripetutamente di scegliere se visualizzare la rubrica,
+inserire un contatto, eliminare un contatto o uscire dal programma.
+
+***************************************************************************/
+
+
 #include <iostream>
 #include <cstring>
 using namespace std;
