@@ -57,13 +57,33 @@ int main()
                         cout << "Inserire un nome valido (max 31 caratteri)!" << endl << "Inserisci il nome del contatto da aggiungere: ";
                         cin >> rubrica[numContatti].nome;
                     }
-
                     cout << "Inserisci il cognome del contatto da aggiungere: ";
                     cin >> rubrica[numContatti].cognome;
                     //Se cognome non valido, lo richiedo
                     while(strlen(rubrica[numContatti].cognome) > MAX_NOME_COGNOME){ 
                         cout << "Inserire un cognome valido (max 31 caratteri)!" << endl << "Inserisci il cognome del contatto da aggiungere: ";
                         cin >> rubrica[numContatti].cognome;
+                    }
+
+                    //Controllo se il contatto e' gia' presente o meno in rubrica
+                    for (int i = 0; i < numContatti; i++){
+                        while (strcmp(rubrica[numContatti].nome,rubrica[i].nome)==0 && strcmp(rubrica[numContatti].cognome,rubrica[i].cognome)==0){
+                            cout << "Contatto gia' presente! Inserire solo contatti NUOVI!\n" << endl;
+                            cout << "Inserisci il nome del contatto da aggiungere: ";
+                            cin >> rubrica[numContatti].nome;
+                            //Se nome non valido, lo richiedo
+                            while(strlen(rubrica[numContatti].nome) >= MAX_NOME_COGNOME){   
+                                cout << "Inserire un nome valido (max 31 caratteri)!" << endl << "Inserisci il nome del contatto da aggiungere: ";
+                                cin >> rubrica[numContatti].nome;
+                            }
+                            cout << "Inserisci il cognome del contatto da aggiungere: ";
+                            cin >> rubrica[numContatti].cognome;
+                            //Se cognome non valido, lo richiedo
+                            while(strlen(rubrica[numContatti].cognome) > MAX_NOME_COGNOME){ 
+                                cout << "Inserire un cognome valido (max 31 caratteri)!" << endl << "Inserisci il cognome del contatto da aggiungere: ";
+                                cin >> rubrica[numContatti].cognome;
+                            }
+                        }
                     }
 
                     cout << "Inserisci il numero del contatto da aggiungere: ";
