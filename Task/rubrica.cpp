@@ -15,7 +15,7 @@ using namespace std;
 //Numero massimo di caratteri per il nome, il cognome
 #define MAX_NOME_COGNOME 32
 //Numero massimo di caratteri per il numero
-#define MAX_NUMERO 11
+#define MAX_NUMERO 20
 //Numero massimo di elementi dell'array Rubrica
 #define MAX_ARRAY 100
 
@@ -89,8 +89,8 @@ int main()
                     cout << "Inserisci il numero del contatto da aggiungere: ";
                     cin >> rubrica[numContatti].numeroTelefono;
                     //Se numero non valido, lo richiedo
-                    while(strlen(rubrica[numContatti].numeroTelefono) < MAX_NUMERO-1 || strlen(rubrica[numContatti].numeroTelefono) > MAX_NUMERO){
-                        cout << "Inserire un numero valido (10 caratteri)!" << endl << "Inserisci il numero del contatto da aggiungere: ";
+                    while(strlen(rubrica[numContatti].numeroTelefono) < MAX_NUMERO-10 || strlen(rubrica[numContatti].numeroTelefono) > MAX_NUMERO){
+                        cout << "Inserire un numero valido (tra 10 e 20 caratteri)!" << endl << "Inserisci il numero del contatto da aggiungere: ";
                         cin >> rubrica[numContatti].numeroTelefono;
                     }
                     numContatti++;
