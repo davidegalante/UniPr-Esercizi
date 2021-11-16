@@ -12,17 +12,25 @@ inserire un contatto, eliminare un contatto o uscire dal programma.
 #include <cstring>
 using namespace std;
 
+//Numero massimo di caratteri per il nome, il cognome
+#define MAX_NOME_COGNOME 32
+//Numero massimo di caratteri per il numero
+#define MAX_NUMERO 11
+//Numero massimo di elementi dell'array Rubrica
+#define MAX_ARRAY 100
+
+//Struct del singolo contatto
 struct contatto{
-        char nome[32];
-        char cognome[32];
-        char numeroTelefono[11];
+        char nome[MAX_NOME_COGNOME];
+        char cognome[MAX_NOME_COGNOME];
+        char numeroTelefono[MAX_NUMERO];
     };
 
 int main()
 {
-    contatto rubrica [100];
+    contatto rubrica [MAX_ARRAY];   //Array della rubrica
     int scelta = 0;
-    int numContatti = 0;
+    int numContatti = 0;            //Numero totale di contatti in rubrica
     
     cout << "*** Rubrica ***" << endl;
     while (true){
@@ -40,21 +48,43 @@ int main()
                 break;
 
             case 2:
-                cout << "Inserisci il nome del contatto da aggiungere: ";
-                cin >> rubrica[numContatti].nome;
-                cout << "Inserisci il cognome del contatto da aggiungere: ";
-                cin >> rubrica[numContatti].cognome;
-                cout << "Inserisci il numero del contatto da aggiungere: ";
-                cin >> rubrica[numContatti].numeroTelefono;
-                numContatti++;
-                cout << "\nContatto Aggiunto!\n";
-                break;
+                //Se supero numero massimo di contatti consentiti, vieto l'inserimento di ulteriori contatti
+                if (numContatti < MAX_ARRAY){
+                    cout << "Inserisci il nome del contatto da aggiungere: ";
+                    cin >> rubrica[numContatti].nome;
+                    //Se nome non valido, lo richiedo
+                    while(strlen(rubrica[numContatti].nome) >= MAX_NOME_COGNOME){   
+                        cout << "Inserire un nome valido (max 31 caratteri)!" << endl << "Inserisci il nome del contatto da aggiungere: ";
+                        cin >> rubrica[numContatti].nome;
+                    }
 
+                    cout << "Inserisci il cognome del contatto da aggiungere: ";
+                    cin >> rubrica[numContatti].cognome;
+                    //Se cognome non valido, lo richiedo
+                    while(strlen(rubrica[numContatti].cognome) > MAX_NOME_COGNOME){ 
+                        cout << "Inserire un cognome valido (max 31 caratteri)!" << endl << "Inserisci il cognome del contatto da aggiungere: ";
+                        cin >> rubrica[numContatti].cognome;
+                    }
+
+                    cout << "Inserisci il numero del contatto da aggiungere: ";
+                    cin >> rubrica[numContatti].numeroTelefono;
+                    //Se numero non valido, lo richiedo
+                    while(strlen(rubrica[numContatti].numeroTelefono) < MAX_NUMERO-1 || strlen(rubrica[numContatti].numeroTelefono) > MAX_NUMERO){
+                        cout << "Inserire un numero valido (10 caratteri)!" << endl << "Inserisci il numero del contatto da aggiungere: ";
+                        cin >> rubrica[numContatti].numeroTelefono;
+                    }
+                    numContatti++;
+                    cout << "\nContatto Aggiunto!\n";  
+                }else{
+                    cout << "\nLa rubrica e' piena!\n";  
+                }
+                break;
+                
             case 3:
                 int trovato;
                 trovato = 0; 
-                char nomeDaRimuovere [32];
-                char cognomeDaRimuovere [32];
+                char nomeDaRimuovere [MAX_NOME_COGNOME];
+                char cognomeDaRimuovere [MAX_NOME_COGNOME];
                 cout << "Inserisci il nome del contatto da cancellare: ";
                 cin >> nomeDaRimuovere;
                 cout << "Inserisci il cognome del contatto da cancellare: ";
@@ -62,7 +92,7 @@ int main()
 
                 for (int i = 0; i < numContatti; i++){
                     if (strcmp(nomeDaRimuovere,rubrica[i].nome)==0 && strcmp(cognomeDaRimuovere,rubrica[i].cognome)==0){
-                        //elimino contatto
+                        //elimino il contatto, se lo trovo in rubrica
                         for(int j=i; j<(numContatti-1); j++)
                         {
                             rubrica[j]=rubrica[j+1];
@@ -71,6 +101,7 @@ int main()
                         numContatti--;
                     }
                 }
+                //Se il contatto non e' presente, stampo un errore
                 if (trovato == 0){
                     cout << "\nContatto non trovato!\n";
                 }else{
@@ -89,4 +120,5 @@ int main()
                 break;
         }
     }
+    return 0;
 }
