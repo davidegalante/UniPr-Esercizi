@@ -90,8 +90,18 @@ int main()
                     cin >> rubrica[numContatti].numeroTelefono;
                     //Se numero non valido, lo richiedo
                     while(strlen(rubrica[numContatti].numeroTelefono) < MAX_NUMERO-10 || strlen(rubrica[numContatti].numeroTelefono) > MAX_NUMERO){
-                        cout << "Inserire un numero valido (tra 10 e 20 caratteri)!" << endl << "Inserisci il numero del contatto da aggiungere: ";
+                        cout << "Inserire un numero valido (tra 10 e 20 caratteri numerici, carattere '+' consentito)!" << endl << "Inserisci il numero del contatto da aggiungere: ";
                         cin >> rubrica[numContatti].numeroTelefono;
+                    }
+                    for(int i = 0; i < strlen(rubrica[numContatti].numeroTelefono);i++){
+                        //Controllo che il numero sia composto solo da caratteri numerici ed eventualmente dal '+'
+                        if (rubrica[numContatti].numeroTelefono[i] > 57 || rubrica[numContatti].numeroTelefono[i] < 48){
+                            //Il primo carattere può essere il '+'
+                            if (rubrica[numContatti].numeroTelefono[0] != 43){
+                                cout << "Inserire un numero valido (tra 10 e 20 caratteri numerici, carattere '+' consentito)!" << endl << "Inserisci il numero del contatto da aggiungere: ";
+                                cin >> rubrica[numContatti].numeroTelefono;
+                            }
+                        }
                     }
                     numContatti++;
                     cout << "\nContatto Aggiunto!\n";  
