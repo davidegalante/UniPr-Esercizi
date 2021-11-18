@@ -68,7 +68,7 @@ int main()
                     //Controllo se il contatto e' gia' presente o meno in rubrica
                     for (int i = 0; i < numContatti; i++){
                         while (strcmp(rubrica[numContatti].nome,rubrica[i].nome)==0 && strcmp(rubrica[numContatti].cognome,rubrica[i].cognome)==0){
-                            cout << "Contatto gia' presente! Inserire solo contatti NUOVI!\n" << endl;
+                            cout << endl << "Contatto gia' presente! Inserire solo contatti NUOVI!" << endl;
                             cout << "Inserisci il nome del contatto da aggiungere: ";
                             cin >> rubrica[numContatti].nome;
                             //Se nome non valido, lo richiedo
@@ -89,22 +89,20 @@ int main()
                     cout << "Inserisci il numero del contatto da aggiungere: ";
                     cin >> rubrica[numContatti].numeroTelefono;
                     //Se numero non valido, lo richiedo
-                    while(strlen(rubrica[numContatti].numeroTelefono) < MAX_NUMERO-10 || strlen(rubrica[numContatti].numeroTelefono) > MAX_NUMERO){
+                    //Il primo carattere puo' essere '+'
+                    while((strlen(rubrica[numContatti].numeroTelefono) < MAX_NUMERO-10 || strlen(rubrica[numContatti].numeroTelefono) > MAX_NUMERO) || (rubrica[numContatti].numeroTelefono[0]!=43 && (rubrica[numContatti].numeroTelefono[0] > 57 || rubrica[numContatti].numeroTelefono[0] < 48))){
                         cout << "Inserire un numero valido (tra 10 e 20 caratteri numerici, carattere '+' consentito)!" << endl << "Inserisci il numero del contatto da aggiungere: ";
                         cin >> rubrica[numContatti].numeroTelefono;
-                    }
-                    //Il primo carattere può essere il '+' oppure un char numerico
-                    while (rubrica[numContatti].numeroTelefono[0]!=43 && (rubrica[numContatti].numeroTelefono[0] > 57 || rubrica[numContatti].numeroTelefono[0] < 48)){
-                      cout << "Inserire un numero valido (tra 10 e 20 caratteri numerici, carattere '+' consentito)!" << endl << "Inserisci il numero del contatto da aggiungere: ";
-                                cin >> rubrica[numContatti].numeroTelefono;
-                    }
-                    for(int i = 1; i < strlen(rubrica[numContatti].numeroTelefono);i++){
-                        //Controllo che il resto del numero sia composto solo da caratteri numerici ed eventualmente dal '+'
-                        while  (rubrica[numContatti].numeroTelefono[i] > 57 || rubrica[numContatti].numeroTelefono[i] < 48 ){
-                            cout << "Inserire un numero valido (tra 10 e 20 caratteri numerici, carattere '+' consentito)!" << endl << "Inserisci il numero del contatto da aggiungere: ";
+                        //Controllo che il resto del numero sia composto solo da caratteri numerici
+                        for(int i = 1; i < strlen(rubrica[numContatti].numeroTelefono);i++){
+                            while (rubrica[numContatti].numeroTelefono[i] > 57 || rubrica[numContatti].numeroTelefono[i] < 48){
+                                cout << "Inserire un numero valido (tra 10 e 20 caratteri numerici, carattere '+' consentito)!" << endl << "Inserisci il numero del contatto da aggiungere: ";
                                 cin >> rubrica[numContatti].numeroTelefono;                         
+                            }
                         }
                     }
+
+                    
                     numContatti++;
                     cout << "\nContatto Aggiunto!\n";  
                 }else{
