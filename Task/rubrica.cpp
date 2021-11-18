@@ -7,7 +7,7 @@ I rubrica devono essere memorizzati in un array di massimo 100 elementi.
 Il programma deve chiedere ripetutamente di scegliere se visualizzare la rubrica,
 inserire un contatto, eliminare un contatto o uscire dal programma.
 
-***************************************************************************/
+*******************************************************************/
 #include <iostream>
 #include <cstring>
 using namespace std;
@@ -93,14 +93,16 @@ int main()
                         cout << "Inserire un numero valido (tra 10 e 20 caratteri numerici, carattere '+' consentito)!" << endl << "Inserisci il numero del contatto da aggiungere: ";
                         cin >> rubrica[numContatti].numeroTelefono;
                     }
-                    for(int i = 0; i < strlen(rubrica[numContatti].numeroTelefono);i++){
-                        //Controllo che il numero sia composto solo da caratteri numerici ed eventualmente dal '+'
-                        if (rubrica[numContatti].numeroTelefono[i] > 57 || rubrica[numContatti].numeroTelefono[i] < 48){
-                            //Il primo carattere può essere il '+'
-                            if (rubrica[numContatti].numeroTelefono[0] != 43){
-                                cout << "Inserire un numero valido (tra 10 e 20 caratteri numerici, carattere '+' consentito)!" << endl << "Inserisci il numero del contatto da aggiungere: ";
+                    //Il primo carattere può essere il '+' oppure un char numerico
+                    while (rubrica[numContatti].numeroTelefono[0]!=43 && (rubrica[numContatti].numeroTelefono[0] > 57 || rubrica[numContatti].numeroTelefono[0] < 48)){
+                      cout << "Inserire un numero valido (tra 10 e 20 caratteri numerici, carattere '+' consentito)!" << endl << "Inserisci il numero del contatto da aggiungere: ";
                                 cin >> rubrica[numContatti].numeroTelefono;
-                            }
+                    }
+                    for(int i = 1; i < strlen(rubrica[numContatti].numeroTelefono);i++){
+                        //Controllo che il resto del numero sia composto solo da caratteri numerici ed eventualmente dal '+'
+                        while  (rubrica[numContatti].numeroTelefono[i] > 57 || rubrica[numContatti].numeroTelefono[i] < 48 ){
+                            cout << "Inserire un numero valido (tra 10 e 20 caratteri numerici, carattere '+' consentito)!" << endl << "Inserisci il numero del contatto da aggiungere: ";
+                                cin >> rubrica[numContatti].numeroTelefono;                         
                         }
                     }
                     numContatti++;
@@ -139,7 +141,6 @@ int main()
                     trovato = 0;
                 }
                 break;
-
             case 4:
                 cout << "Addio!";
                 return 0;
