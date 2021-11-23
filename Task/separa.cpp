@@ -1,3 +1,17 @@
+/******************************************************************************
+
+Davide Galante, UniPr Informatica
+Scrivere una funzione di nome separa che, presi in input una stringa s e due array di caratteri alpha e 
+num, memorizza in alpha i caratteri alfabetici della stringa s e in num i caratteri numerici della stringa s. 
+Tutti gli altri caratteri vengono scartati. La funzione deve restituire il numero di elementi memorizzati in 
+alpha e il numero di elementi memorizzati in num.
+
+Scrivere una funzione main che legge da standard input una stringa str di massimo 100 caratteri e, 
+utilizzando obbligatoriamente la funzione separa, suddivide i caratteri presenti in str in due array 
+SAlpha e SNum, rispettivamente di caratteri alfabetici e numeri. Infine, si stampando i due array a 
+video.
+*******************************************************************/
+
 #include <iostream>
 #include <cstring>
 #include <cctype>
