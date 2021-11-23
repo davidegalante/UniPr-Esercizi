@@ -1,5 +1,4 @@
 /******************************************************************************
-
 Davide Galante, UniPr Informatica
 Scrivere una funzione di nome separa che, presi in input una stringa s e due array di caratteri alpha e 
 num, memorizza in alpha i caratteri alfabetici della stringa s e in num i caratteri numerici della stringa s. 
